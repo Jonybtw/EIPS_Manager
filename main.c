@@ -40,27 +40,19 @@ int main() {
 
 void mostrarMenu() {
     printf("\n--- Menu Principal ---\n");
-    
-    // Opções relacionadas a visitas
-    printf("\n--- Opções de Visitas ---\n");
     printf("1 - Listar visitas\n");
-    printf("3 - Consultar visita por ID\n");
+    printf("2 - Listar embaixadores\n");
+    printf("3 - Consultar visit a por ID\n");
+    printf("4 - Consultar embaixador por numero\n");
     printf("5 - Adicionar visita\n");
+    printf("6 - Adicionar embaixador\n");
     printf("7 - Autorizar visita\n");
     printf("8 - Adicionar embaixadores a uma visita\n");
+    printf("9 - Editar embaixador\n");
     printf("10 - Editar visita\n");
+    printf("11 - Remover embaixador\n");
     printf("12 - Remover visita\n");
     printf("13 - Cancelar visita\n");
-    printf("14 - Confirmar realização de visita\n");
-    
-    // Opções relacionadas a embaixadores
-    printf("\n--- Opções de Embaixadores ---\n");
-    printf("2 - Listar embaixadores\n");
-    printf("4 - Consultar embaixador por número\n");
-    printf("6 - Adicionar embaixador\n");
-    printf("9 - Editar embaixador\n");
-    printf("11 - Remover embaixador\n");
-    
-    // Opção de saída
-    printf("\n15 - Sair\n");
+    printf("14 - Confirmar realizacao de visita\n");
+    printf("15 - Sair\n");
 }
