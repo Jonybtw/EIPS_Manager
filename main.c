@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> // Include this header for the system function
 #include "visitas.h"
 #include "embaixadores.h"
 #include "dados.h"
@@ -14,6 +15,7 @@ int main() {
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
         getchar(); // consumir o \n deixado pelo scanf
+        system("cls"); // limpar o ecra
 
         switch (opcao) {
             case 1: listarVisitas(); break;
@@ -40,19 +42,25 @@ int main() {
 
 void mostrarMenu() {
     printf("\n--- Menu Principal ---\n");
+
+    printf("\n--- Visitas ---\n");
     printf("1 - Listar visitas\n");
-    printf("2 - Listar embaixadores\n");
-    printf("3 - Consultar visit a por ID\n");
-    printf("4 - Consultar embaixador por numero\n");
-    printf("5 - Adicionar visita\n");
-    printf("6 - Adicionar embaixador\n");
-    printf("7 - Autorizar visita\n");
-    printf("8 - Adicionar embaixadores a uma visita\n");
-    printf("9 - Editar embaixador\n");
-    printf("10 - Editar visita\n");
-    printf("11 - Remover embaixador\n");
-    printf("12 - Remover visita\n");
-    printf("13 - Cancelar visita\n");
-    printf("14 - Confirmar realizacao de visita\n");
-    printf("15 - Sair\n");
+    printf("2 - Consultar visita por ID\n");
+    printf("3 - Adicionar visita\n");
+    printf("4 - Autorizar visita\n");
+    printf("5 - Adicionar embaixadores a uma visita\n");
+    printf("6 - Editar visita\n");
+    printf("7 - Remover visita\n");
+    printf("8 - Cancelar visita\n");
+    printf("9 - Confirmar realizacao de visita\n");
+    
+    printf("\n--- Embaixadores ---\n");
+    printf("10 - Listar embaixadores\n");
+    printf("11 - Consultar embaixador por numero\n");
+    printf("12 - Adicionar embaixador\n");
+    printf("13 - Editar embaixador\n");
+    printf("14 - Remover embaixador\n");
+
+    printf("\n15 - Sair\n");
 }
+
