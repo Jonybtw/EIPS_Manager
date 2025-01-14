@@ -1,0 +1,14 @@
+# Ignore compiled files
+*.exe
+*.o
+
+# Ignore temporary files
+*.tmp
+*.log
+*.bak
+
+# Ignore editor/IDE files
+*.swp
+*.suo
+*.user
+.vscode/
