@@ -31,6 +31,7 @@ void adicionarVisita() {
     strcpy(novaVisita.estado, "em planeamento");
     novaVisita.numeroEmbaixadores = 0;
 
+    printf("--- Adicionar Visita ---\n");
     printf("Local da visita: ");
     fgets(novaVisita.local, sizeof(novaVisita.local), stdin);
     novaVisita.local[strcspn(novaVisita.local, "\n")] = 0;
@@ -50,6 +51,7 @@ void consultarVisitaPorID() {
     }
 
     int idConsulta;
+    printf("--- Consultar Visita por ID ---\n");
     printf("Digite o ID da visita: ");
     scanf("%d", &idConsulta);
 
@@ -74,6 +76,7 @@ void autorizarVisita() {
     }
 
     int idConsulta;
+    printf("--- Autorizar Visita ---\n");
     printf("Digite o ID da visita a autorizar: ");
     scanf("%d", &idConsulta);
 
@@ -110,6 +113,7 @@ void adicionarEmbaixadoresAVisita() {
     }
 
     int idVisita;
+    printf("--- Adicionar Embaixador a Visita ---\n");
     printf("Digite o ID da visita para adicionar embaixadores: ");
     scanf("%d", &idVisita);
 
@@ -157,6 +161,7 @@ void editarVisita() {
     }
 
     int idVisita;
+    printf("--- Editar Visita ---\n");
     printf("Digite o ID da visita que deseja editar: ");
     scanf("%d", &idVisita);
     getchar(); // limpa o buffer
@@ -207,6 +212,7 @@ void removerVisita() {
     }
 
     int idVisita;
+    printf("--- Remover Visita ---\n");
     printf("Digite o ID da visita que deseja remover: ");
     scanf("%d", &idVisita);
 
@@ -237,6 +243,7 @@ void cancelarVisita() {
     }
 
     int idVisita;
+    printf("--- Cancelar Visita ---\n");
     printf("Digite o ID da visita que deseja cancelar: ");
     scanf("%d", &idVisita);
 
@@ -264,6 +271,7 @@ void confirmarRealizacaoVisita() {
     }
 
     int idVisita;
+    printf("--- Confirmar Realização de Visita ---\n");
     printf("Digite o ID da visita para confirmar: ");
     scanf("%d", &idVisita);
 

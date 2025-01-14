@@ -18,21 +18,27 @@ int main() {
         system("cls"); // limpar o ecra
 
         switch (opcao) {
+            // Visitas
             case 1: listarVisitas(); break;
-            case 2: listarEmbaixadores(); break;
-            case 3: consultarVisitaPorID(); break;
-            case 4: consultarEmbaixadorPorNumero(); break;
-            case 5: adicionarVisita(); break;
-            case 6: adicionarEmbaixador(); break;
-            case 7: autorizarVisita(); break;
-            case 8: adicionarEmbaixadoresAVisita(); break;
-            case 9: editarEmbaixador(); break;
-            case 10: editarVisita(); break;
-            case 11: removerEmbaixador(); break;
-            case 12: removerVisita(); break;
-            case 13: cancelarVisita(); break;
-            case 14: confirmarRealizacaoVisita(); break;
+            case 2: consultarVisitaPorID(); break;
+            case 3: adicionarVisita(); break;
+            case 4: autorizarVisita(); break;
+            case 5: adicionarEmbaixadoresAVisita(); break;
+            case 6: editarVisita(); break;
+            case 7: removerVisita(); break;
+            case 8: cancelarVisita(); break;
+            case 9: confirmarRealizacaoVisita(); break;
+
+            // Embaixadores
+            case 10: listarEmbaixadores(); break;
+            case 11: consultarEmbaixadorPorNumero(); break;
+            case 12: adicionarEmbaixador(); break;
+            case 13: editarEmbaixador(); break;
+            case 14: removerEmbaixador(); break;
+
+            // Exit
             case 15: salvarDados(); printf("Saindo da aplicacao...\n"); break;
+
             default: printf("Opcao invalida!\n");
         }
     } while (opcao != 15);
@@ -40,8 +46,9 @@ int main() {
     return 0;
 }
 
+
 void mostrarMenu() {
-    printf("\n--- Menu Principal ---\n");
+    printf("\n=== Menu Principal ===\n");
 
     printf("\n--- Visitas ---\n");
     printf("1 - Listar visitas\n");
