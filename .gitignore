@@ -12,3 +12,6 @@
 *.suo
 *.user
 .vscode/
+
+# Ignore text files
+*.txt
