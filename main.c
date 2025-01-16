@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h> // Include this header for the system function
+#include <stdlib.h>
+#include <locale.h>
 #include "visitas.h"
 #include "embaixadores.h"
 #include "dados.h"
@@ -7,12 +8,13 @@
 void mostrarMenu();
 
 int main() {
+    setlocale(LC_ALL,"Portuguese");
     carregarDados();
     int opcao;
 
     do {
         mostrarMenu();
-        printf("Escolha uma opcao: ");
+        printf("Escolha uma opção: ");
         scanf("%d", &opcao);
         getchar(); // consumir o \n deixado pelo scanf
         system("cls"); // limpar o ecra
