@@ -1,4 +1,4 @@
-# Project Name
+# EIPS Manager
 
 Use this command to compile and execute:
 
