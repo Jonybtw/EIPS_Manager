@@ -12,7 +12,7 @@ int totalVisitas = 0;
 void listarVisitas() {
     printf("\n--- Lista de Visitas ---\n");
     if (totalVisitas == 0) {
-        printf("Nenhuma visita cadastrada.\n");
+        printf("Nenhuma visita registada.\n");
         return;
     }
     for (int i = 0; i < totalVisitas; i++) {
