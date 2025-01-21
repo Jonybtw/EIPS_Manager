@@ -3,10 +3,14 @@
 #include "visitas.h"
 #include "embaixadores.h"
 #include "dados.h"
+#include <windows.h>
+#include <stdio.h>
 
 void mostrarMenu();
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     carregarDados();
     int opcao;
 
