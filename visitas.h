@@ -7,11 +7,11 @@
 
 typedef struct {
     int idVisita;
-    Embaixador embaixadores[9]; // Até 9 embaixadores por visita
+    Embaixador embaixadores[9]; // até 9 embaixadores por visita
     int numeroEmbaixadores;
     char estado[15]; // "em planeamento", "autorizada", etc.
     char local[100];
-    char data[11]; // Formato "dd/mm/aaaa"
+    char data[11]; // formato "dd/mm/aaaa"
 } Visita;
 
 extern Visita visitas[MAX_VISITAS];

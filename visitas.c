@@ -10,7 +10,7 @@ Visita visitas[MAX_VISITAS];
 int totalVisitas = 0;
 
 void listarVisitas() {
-    printf("\n--- Lista de Visitas ---\n");
+    printf("--- Lista de Visitas ---\n");
     if (totalVisitas == 0) {
         printf("Nenhuma visita registada.\n");
         return;
@@ -23,7 +23,7 @@ void listarVisitas() {
 
 void adicionarVisita() {
     if (totalVisitas >= MAX_VISITAS) {
-        printf("Limite maximo de visitas atingido.\n");
+        printf("Limite máximo de visitas atingido.\n");
         return;
     }
     Visita novaVisita;
@@ -46,7 +46,8 @@ void adicionarVisita() {
 
 void consultarVisitaPorID() {
     if (totalVisitas == 0) {
-        printf("\nNenhuma visita cadastrada para consultar.\n");
+        printf("--- Consultar Visita por ID ---\n");
+        printf("Nenhuma visita registada para consultar.\n");
         return;
     }
 
@@ -62,16 +63,18 @@ void consultarVisitaPorID() {
             printf("Estado: %s\n", visitas[i].estado);
             printf("Local: %s\n", visitas[i].local);
             printf("Data: %s\n", visitas[i].data);
-            printf("Numero de Embaixadores: %d\n", visitas[i].numeroEmbaixadores);
+            printf("Número de Embaixadores: %d\n", visitas[i].numeroEmbaixadores);
             return;
         }
     }
-    printf("Visita com ID %d nao encontrada.\n", idConsulta);
+    printf("--- Consultar Visita por ID ---\n");
+    printf("Visita com ID %d não encontrada.\n", idConsulta);
 }
 
 void autorizarVisita() {
     if (totalVisitas == 0) {
-        printf("\nNenhuma visita cadastrada para autorizar.\n");
+        printf("--- Autorizar Visita ---\n");
+        printf("Nenhuma visita registada para autorizar.\n");
         return;
     }
 
@@ -83,12 +86,12 @@ void autorizarVisita() {
     for (int i = 0; i < totalVisitas; i++) {
         if (visitas[i].idVisita == idConsulta) {
             if (strcmp(visitas[i].estado, "em planeamento") != 0) {
-                printf("A visita com ID %d nao esta em planeamento. Nao pode ser autorizada.\n", idConsulta);
+                printf("A visita com ID %d não esta em planeamento. Não pode ser autorizada.\n", idConsulta);
                 return;
             }
 
             if (visitas[i].numeroEmbaixadores < 2) {
-                printf("A visita com ID %d nao tem o minimo de 2 embaixadores. Nao pode ser autorizada.\n", idConsulta);
+                printf("A visita com ID %d não tem o mínimo de 2 embaixadores. Não pode ser autorizada.\n", idConsulta);
                 return;
             }
 
@@ -98,17 +101,19 @@ void autorizarVisita() {
         }
     }
 
-    printf("Visita com ID %d nao encontrada.\n", idConsulta);
+    printf("Visita com ID %d não encontrada.\n", idConsulta);
 }
 
 void adicionarEmbaixadoresAVisita() {
     if (totalVisitas == 0) {
-        printf("\nNenhuma visita cadastrada para adicionar embaixadores.\n");
+        printf("--- Adicionar Embaixador a Visita ---\n");
+        printf("Nenhuma visita registada para adicionar embaixadores.\n");
         return;
     }
 
     if (totalEmbaixadores == 0) {
-        printf("\nNenhum embaixador cadastrado para associar a uma visita.\n");
+        printf("--- Adicionar Embaixador a Visita ---\n");
+        printf("Nenhum embaixador registada para associar a uma visita.\n");
         return;
     }
 
@@ -120,7 +125,7 @@ void adicionarEmbaixadoresAVisita() {
     for (int i = 0; i < totalVisitas; i++) {
         if (visitas[i].idVisita == idVisita) {
             if (visitas[i].numeroEmbaixadores >= 9) {
-                printf("A visita ja atingiu o limite de 9 embaixadores.\n");
+                printf("A visita já atingiu o limite de 9 embaixadores.\n");
                 return;
             }
 
@@ -130,16 +135,16 @@ void adicionarEmbaixadoresAVisita() {
             }
 
             int escolha;
-            printf("Escolha o numero do embaixador para adicionar (ou 0 para sair): ");
+            printf("Escolha o número do embaixador para adicionar (ou 0 para sair): ");
             scanf("%d", &escolha);
 
             if (escolha == 0) {
-                printf("Operacao cancelada.\n");
+                printf("Operação cancelada.\n");
                 return;
             }
 
             if (escolha < 1 || escolha > totalEmbaixadores) {
-                printf("Opcao invalida.\n");
+                printf("Opção inválida.\n");
                 return;
             }
 
@@ -151,12 +156,13 @@ void adicionarEmbaixadoresAVisita() {
         }
     }
 
-    printf("Visita com ID %d nao encontrada.\n", idVisita);
+    printf("Visita com ID %d não encontrada.\n", idVisita);
 }
 
 void editarVisita() {
     if (totalVisitas == 0) {
-        printf("\nNenhuma visita cadastrada para editar.\n");
+        printf("--- Editar Visita ---\n");
+        printf("Nenhuma visita cadastrada para editar.\n");
         return;
     }
 
@@ -201,13 +207,14 @@ void editarVisita() {
             return;
         }
     }
-
-    printf("Visita com ID %d nao encontrada.\n", idVisita);
+    printf("--- Editar Visita ---\n");
+    printf("Visita com ID %d não encontrada.\n", idVisita);
 }
 
 void removerVisita() {
     if (totalVisitas == 0) {
-        printf("\nNenhuma visita cadastrada para remover.\n");
+        printf("--- Remover Visita ---\n");
+        printf("Nenhuma visita registada para remover.\n");
         return;
     }
 
@@ -219,7 +226,7 @@ void removerVisita() {
     for (int i = 0; i < totalVisitas; i++) {
         if (visitas[i].idVisita == idVisita) {
             if (strcmp(visitas[i].estado, "realizada") == 0) {
-                printf("A visita nao pode ser removida porque ja foi realizada.\n");
+                printf("A visita não pode ser removida porque ja foi realizada.\n");
                 return;
             }
 
@@ -227,18 +234,19 @@ void removerVisita() {
                 visitas[j] = visitas[j + 1];
             }
             totalVisitas--;
-            salvarDados(); // salvar os dados após a remoção
+            gravarDados(); // guardar os dados após a remoção
             printf("Visita removida com sucesso!\n");
             return;
         }
     }
-
-    printf("Visita com ID %d nao encontrada.\n", idVisita);
+    printf("--- Remover Visita ---\n");
+    printf("Visita com ID %d não encontrada.\n", idVisita);
 }
 
 void cancelarVisita() {
     if (totalVisitas == 0) {
-        printf("\nNenhuma visita cadastrada para cancelar.\n");
+        printf("--- Cancelar Visita ---\n");
+        printf("Nenhuma visita registada para cancelar.\n");
         return;
     }
 
@@ -255,7 +263,7 @@ void cancelarVisita() {
             }
 
             strcpy(visitas[i].estado, "cancelada");
-            salvarDados();
+            gravarDados();
             printf("Visita cancelada com sucesso!\n");
             return;
         }
@@ -266,7 +274,8 @@ void cancelarVisita() {
 
 void confirmarRealizacaoVisita() {
     if (totalVisitas == 0) {
-        printf("\nNenhuma visita cadastrada para confirmar.\n");
+        printf("--- Confirmar Realização de Visita ---\n");
+        printf("Nenhuma visita registada para confirmar.\n");
         return;
     }
 
@@ -297,11 +306,11 @@ void confirmarRealizacaoVisita() {
             }
 
             strcpy(visitas[i].estado, "realizada");
-            salvarDados();
+            gravarDados();
             printf("Visita confirmada como realizada com sucesso!\n");
             return;
         }
     }
-
+    printf("--- Confirmar Realização de Visita ---\n");
     printf("Visita com ID %d não encontrada.\n", idVisita);
 }

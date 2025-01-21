@@ -3,11 +3,11 @@
 #include "visitas.h"
 #include <stdio.h>
 
-void salvarDados() {
-    // salvar embaixadores no arquivo
+void gravarDados() {
+    // gravar embaixadores no arquivo
     FILE *arquivoEmbaixadores = fopen("embaixadores.txt", "w");
     if (arquivoEmbaixadores == NULL) {
-        printf("Erro ao abrir o arquivo para salvar embaixadores.\n");
+        printf("Erro ao abrir o arquivo para gravar embaixadores.\n");
         return;
     }
 
@@ -20,10 +20,10 @@ void salvarDados() {
     }
     fclose(arquivoEmbaixadores);
 
-    // salvar visitas no arquivo
+    // gravar visitas no arquivo
     FILE *arquivoVisitas = fopen("visitas.txt", "w");
     if (arquivoVisitas == NULL) {
-        printf("Erro ao abrir o arquivo para salvar visitas.\n");
+        printf("Erro ao abrir o arquivo para gravar visitas.\n");
         return;
     }
 

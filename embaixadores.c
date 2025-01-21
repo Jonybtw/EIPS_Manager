@@ -8,13 +8,13 @@ Embaixador embaixadores[MAX_EMBAIXADORES];
 int totalEmbaixadores = 0;
 
 void listarEmbaixadores() {
-    printf("\n--- Lista de Embaixadores ---\n");
+    printf("--- Lista de Embaixadores ---\n");
     if (totalEmbaixadores == 0) {
-        printf("Nenhum embaixador cadastrado.\n");
+        printf("Nenhum embaixador registado.\n");
         return;
     }
     for (int i = 0; i < totalEmbaixadores; i++) {
-        printf("Numero: %d, Nome: %s, Escola: %s, NIF: %s\n",
+        printf("Número: %d, Nome: %s, Escola: %s, NIF: %s\n",
                embaixadores[i].numeroEstudante, embaixadores[i].nomeCompleto,
                embaixadores[i].escola, embaixadores[i].nif);
     }
@@ -22,12 +22,12 @@ void listarEmbaixadores() {
 
 void adicionarEmbaixador() {
     if (totalEmbaixadores >= MAX_EMBAIXADORES) {
-        printf("Limite maximo de embaixadores atingido.\n");
+        printf("Limite máximo de embaixadores atingido.\n");
         return;
     }
     Embaixador novoEmbaixador;
 
-    printf("Numero do estudante: ");
+    printf("Número do estudante: ");
     scanf("%d", &novoEmbaixador.numeroEstudante);
     getchar(); // limpa o buffer após scanf
 
@@ -49,12 +49,14 @@ void adicionarEmbaixador() {
 
 void consultarEmbaixadorPorNumero() {
     if (totalEmbaixadores == 0) {
-        printf("\nNenhum embaixador cadastrado para consultar.\n");
+        printf("--- Consultar Embaixador por Número ---\n");
+        printf("Nenhum embaixador registado para consultar.\n");
         return;
     }
 
     int numeroConsulta;
-    printf("Digite o numero do estudante: ");
+    printf("--- Consultar Embaixador por Número ---\n");
+    printf("Digite o número do estudante: ");
     scanf("%d", &numeroConsulta);
 
     for (int i = 0; i < totalEmbaixadores; i++) {
@@ -67,17 +69,20 @@ void consultarEmbaixadorPorNumero() {
             return;
         }
     }
-    printf("Embaixador com numero %d nao encontrado.\n", numeroConsulta);
+    printf("--- Consultar Embaixador por Número ---\n");
+    printf("Embaixador com número %d não encontrado.\n", numeroConsulta);
 }
 
 void editarEmbaixador() {
     if (totalEmbaixadores == 0) {
-        printf("\nNenhum embaixador cadastrado para editar.\n");
+        printf("--- Editar Embaixador ---\n");
+        printf("Nenhum embaixador registado para editar.\n");
         return;
     }
 
     int numeroEstudante;
-    printf("Digite o numero do estudante do embaixador que deseja editar: ");
+    printf("--- Editar Embaixador ---\n");
+    printf("Digite o número do estudante do embaixador que deseja editar: ");
     scanf("%d", &numeroEstudante);
     getchar(); // limpa o buffer
 
@@ -116,25 +121,27 @@ void editarEmbaixador() {
             return;
         }
     }
-
-    printf("Embaixador com numero %d nao encontrado.\n", numeroEstudante);
+    printf("--- Editar Embaixador ---\n");
+    printf("Embaixador com número %d não encontrado.\n", numeroEstudante);
 }
 
 void removerEmbaixador() {
     if (totalEmbaixadores == 0) {
-        printf("\nNenhum embaixador cadastrado para remover.\n");
+        printf("--- Remover Embaixador ---\n");
+        printf("Nenhum embaixador registado para remover.\n");
         return;
     }
 
     int numeroEstudante;
-    printf("Digite o numero do estudante do embaixador que deseja remover: ");
+    printf("--- Remover Embaixador ---\n");
+    printf("Digite o número do estudante do embaixador que deseja remover: ");
     scanf("%d", &numeroEstudante);
 
     for (int i = 0; i < totalVisitas; i++) {
         for (int j = 0; j < visitas[i].numeroEmbaixadores; j++) {
             if (visitas[i].embaixadores[j].numeroEstudante == numeroEstudante &&
                 strcmp(visitas[i].estado, "autorizada") == 0) {
-                printf("O embaixador nao pode ser removido porque esta associado a uma visita autorizada.\n");
+                printf("O embaixador não pode ser removido porque está associado a uma visita autorizada.\n");
                 return;
             }
         }
@@ -146,11 +153,11 @@ void removerEmbaixador() {
                 embaixadores[j] = embaixadores[j + 1];
             }
             totalEmbaixadores--;
-            salvarDados(); // salvar os dados após a remoção
+            gravarDados(); // gravar os dados após a remoção
             printf("Embaixador removido com sucesso!\n");
             return;
         }
     }
-
-    printf("Embaixador com numero %d nao encontrado.\n", numeroEstudante);
+    printf("--- Remover Embaixador ---\n");
+    printf("Embaixador com número %d nao encontrado.\n", numeroEstudante);
 }
