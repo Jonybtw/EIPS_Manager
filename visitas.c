@@ -51,6 +51,9 @@ void consultarVisitaPorID() {
         return;
     }
 
+    listarVisitas();
+    printf("\n");
+
     int idConsulta;
     printf("--- Consultar Visita por ID ---\n");
     printf("Digite o ID da visita: ");
@@ -76,6 +79,9 @@ void autorizarVisita() {
         printf("Nenhuma visita registada para autorizar.\n");
         return;
     }
+
+    listarVisitas();
+    printf("\n");
 
     int idConsulta;
     printf("--- Autorizar Visita ---\n");
@@ -109,9 +115,12 @@ void adicionarEmbaixadoresAVisita() {
         return;
     }
 
+    listarVisitas();
+    printf("\n");
+
     if (totalEmbaixadores == 0) {
         printf("--- Adicionar Embaixador a Visita ---\n");
-        printf("Nenhum embaixador registada para associar a uma visita.\n");
+        printf("Nenhum embaixador registado para associar a uma visita.\n");
         return;
     }
 
@@ -127,9 +136,9 @@ void adicionarEmbaixadoresAVisita() {
                 return;
             }
 
-            printf("\n--- Lista de Embaixadores Disponiveis ---\n");
+            printf("\n--- Lista de Embaixadores Disponíveis ---\n");
             for (int j = 0; j < totalEmbaixadores; j++) {
-                printf("%d. %s (ID: %d)\n", j + 1, embaixadores[j].nomeCompleto, embaixadores[j].numeroEstudante);
+                printf("%d. %s (Número: %d)\n", j + 1, embaixadores[j].nomeCompleto, embaixadores[j].numeroEstudante);
             }
 
             int escolha;
@@ -162,6 +171,9 @@ void editarVisita() {
         printf("Nenhuma visita cadastrada para editar.\n");
         return;
     }
+
+    listarVisitas();
+    printf("\n");
 
     int idVisita;
     printf("--- Editar Visita ---\n");
@@ -214,6 +226,9 @@ void removerVisita() {
         return;
     }
 
+    listarVisitas();
+    printf("\n");
+
     int idVisita;
     printf("--- Remover Visita ---\n");
     printf("Digite o ID da visita que deseja remover: ");
@@ -245,6 +260,9 @@ void cancelarVisita() {
         return;
     }
 
+    listarVisitas();
+    printf("\n");
+
     int idVisita;
     printf("--- Cancelar Visita ---\n");
     printf("Digite o ID da visita que deseja cancelar: ");
@@ -272,6 +290,9 @@ void confirmarRealizacaoVisita() {
         printf("Nenhuma visita registada para confirmar.\n");
         return;
     }
+
+    listarVisitas();
+    printf("\n");
 
     int idVisita;
     printf("--- Confirmar Realização de Visita ---\n");

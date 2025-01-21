@@ -26,7 +26,7 @@ void adicionarEmbaixador() {
         return;
     }
     Embaixador novoEmbaixador;
-
+    printf("--- Adicionar Embaixador ---\n");
     printf("Número do estudante: ");
     scanf("%d", &novoEmbaixador.numeroEstudante);
     getchar(); // limpa o buffer após scanf
@@ -54,6 +54,9 @@ void consultarEmbaixadorPorNumero() {
         return;
     }
 
+    listarEmbaixadores();
+    printf("\n");
+
     int numeroConsulta;
     printf("--- Consultar Embaixador por Número ---\n");
     printf("Digite o número do estudante: ");
@@ -79,6 +82,9 @@ void editarEmbaixador() {
         return;
     }
 
+    listarEmbaixadores();
+    printf("\n");
+
     int numeroEstudante;
     printf("--- Editar Embaixador ---\n");
     printf("Digite o número do estudante do embaixador que deseja editar: ");
@@ -87,12 +93,12 @@ void editarEmbaixador() {
 
     for (int i = 0; i < totalEmbaixadores; i++) {
         if (embaixadores[i].numeroEstudante == numeroEstudante) {
-            printf("\n--- Editar Embaixador ---\n");
+            printf("\n--- Dados do Embaixador ---\n");
             printf("1. Nome atual: %s\n", embaixadores[i].nomeCompleto);
             printf("2. Escola atual: %s\n", embaixadores[i].escola);
             printf("3. NIF atual: %s\n", embaixadores[i].nif);
 
-            printf("\nDigite o novo nome completo (ou pressione Enter para manter o atual): ");
+            printf("\nNovo nome (Enter para manter o atual): ");
             char novoNome[100];
             fgets(novoNome, sizeof(novoNome), stdin);
             if (strcmp(novoNome, "\n") != 0) {
@@ -100,7 +106,7 @@ void editarEmbaixador() {
                 strcpy(embaixadores[i].nomeCompleto, novoNome);
             }
 
-            printf("Digite a nova escola (ou pressione Enter para manter a atual): ");
+            printf("Nova escola (Enter para manter a atual): ");
             char novaEscola[10];
             fgets(novaEscola, sizeof(novaEscola), stdin);
             if (strcmp(novaEscola, "\n") != 0) {
@@ -108,7 +114,7 @@ void editarEmbaixador() {
                 strcpy(embaixadores[i].escola, novaEscola);
             }
 
-            printf("Digite o novo NIF (ou pressione Enter para manter o atual): ");
+            printf("Novo NIF (Enter para manter a atual): ");
             char novoNIF[10];
             fgets(novoNIF, sizeof(novoNIF), stdin);
             if (strcmp(novoNIF, "\n") != 0) {
@@ -129,6 +135,9 @@ void removerEmbaixador() {
         printf("Nenhum embaixador registado para remover.\n");
         return;
     }
+
+    listarEmbaixadores();
+    printf("\n");
 
     int numeroEstudante;
     printf("--- Remover Embaixador ---\n");

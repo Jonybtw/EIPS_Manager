@@ -41,7 +41,6 @@ void gravarDados() {
         fprintf(arquivoVisitas, "\n");
     }
     fclose(arquivoVisitas);
-
     printf("Dados gravados com sucesso!\n");
 }
 
@@ -89,6 +88,5 @@ void carregarDados() {
         }
         fclose(arquivoVisitas);
     }
-
     printf("Dados carregados com sucesso!\n");
 }

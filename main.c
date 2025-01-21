@@ -7,6 +7,7 @@
 void mostrarMenu();
 
 int main() {
+    carregarDados();
     int opcao;
 
     do {
@@ -49,7 +50,7 @@ int main() {
 void mostrarMenu() {
         printf("\n");
     printf("==============================================\n");
-    printf("|               🌟 Menu Principal            |\n");
+    printf("|               🌟 EIPS Manager              |\n");
     printf("==============================================\n");
     printf("|                                            |\n");
     printf("| 🔹 Visitas                                 |\n");
@@ -70,9 +71,9 @@ void mostrarMenu() {
     printf("|  13  - Editar embaixador                   |\n");
     printf("|  14  - Remover embaixador                  |\n");
     printf("|                                            |\n");
-    printf("| 🔸 15  - Sair                              |\n");
+    printf("| 🔸 15  - Gravar & Sair                     |\n");
     printf("|                                            |\n");
-    printf("=============================================\n");
+    printf("==============================================\n");
 
 
 }
