@@ -67,7 +67,6 @@ void consultarVisitaPorID() {
             return;
         }
     }
-    printf("--- Consultar Visita por ID ---\n");
     printf("Visita com ID %d não encontrada.\n", idConsulta);
 }
 
@@ -100,7 +99,6 @@ void autorizarVisita() {
             return;
         }
     }
-
     printf("Visita com ID %d não encontrada.\n", idConsulta);
 }
 
@@ -155,7 +153,6 @@ void adicionarEmbaixadoresAVisita() {
             return;
         }
     }
-
     printf("Visita com ID %d não encontrada.\n", idVisita);
 }
 
@@ -207,7 +204,6 @@ void editarVisita() {
             return;
         }
     }
-    printf("--- Editar Visita ---\n");
     printf("Visita com ID %d não encontrada.\n", idVisita);
 }
 
@@ -239,7 +235,6 @@ void removerVisita() {
             return;
         }
     }
-    printf("--- Remover Visita ---\n");
     printf("Visita com ID %d não encontrada.\n", idVisita);
 }
 
@@ -268,7 +263,6 @@ void cancelarVisita() {
             return;
         }
     }
-
     printf("Visita com ID %d não encontrada.\n", idVisita);
 }
 
@@ -311,6 +305,5 @@ void confirmarRealizacaoVisita() {
             return;
         }
     }
-    printf("--- Confirmar Realização de Visita ---\n");
     printf("Visita com ID %d não encontrada.\n", idVisita);
 }

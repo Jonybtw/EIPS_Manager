@@ -69,7 +69,6 @@ void consultarEmbaixadorPorNumero() {
             return;
         }
     }
-    printf("--- Consultar Embaixador por Número ---\n");
     printf("Embaixador com número %d não encontrado.\n", numeroConsulta);
 }
 
@@ -121,7 +120,6 @@ void editarEmbaixador() {
             return;
         }
     }
-    printf("--- Editar Embaixador ---\n");
     printf("Embaixador com número %d não encontrado.\n", numeroEstudante);
 }
 
@@ -158,6 +156,5 @@ void removerEmbaixador() {
             return;
         }
     }
-    printf("--- Remover Embaixador ---\n");
     printf("Embaixador com número %d nao encontrado.\n", numeroEstudante);
 }

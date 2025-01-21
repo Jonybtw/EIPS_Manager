@@ -42,7 +42,7 @@ void gravarDados() {
     }
     fclose(arquivoVisitas);
 
-    printf("Dados salvos com sucesso!\n");
+    printf("Dados gravados com sucesso!\n");
 }
 
 void carregarDados() {
